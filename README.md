@@ -29,3 +29,14 @@ def sort(array):
 print(sort(arr))
 
 
+print("Try prabably less time taking bubble sort")
+print('simple -- we go from the starting, scan, swaps, repeat')
+print('we cut down scanning the parts that need not be scanned anymore.. first step is to reduce inner loop by 1 every time')
+arr = [7,467,2,0,4,6]
+def sort(array):
+    for i in range(len(array)-2):
+        for j in range(len(array)-1-i):
+            if array[j]>array[j+1]:
+                array[j],array[j+1]=array[j+1],array[j]
+    return array
+print(sort(arr))
