@@ -91,4 +91,22 @@ def mergesort(array):
 print(mergesort(arr))
 
 
+print("Try quick sort-- props to teacher late Harsha and mycodeschool")
+arr = [7,467,2,24,0,4,6,8]
+def partition(array,start,end):
+    pivot = array[end-1]
+    pi = start
+    for i in range(start,end):
+        if array[i]<=pivot:
+            array[i],array[pi]=array[pi],array[i]
+            pi += 1
+    return pi
+def quicksort(array,start,end):
+    if start<end:
+        pi = partition(array,start,end)
+        quicksort(array,start,pi-1)
+        quicksort(array,pi,end)
+    return array
+#print(quicksort(arr,0,8))
+print(quicksort(arr,0,8))
 
