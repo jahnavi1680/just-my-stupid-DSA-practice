@@ -54,3 +54,41 @@ def sort(array):
         array[hole]=el
     return array
 print(sort(arr))
+
+
+print("Try merge sort")
+arr = [7,467,2,0,4,6]
+a = [2,5,7,8]
+b = [3,6,9,10]
+def merge(a,b):
+    i=0
+    j=0
+    k=0
+    full = [0] * (len(a) + len(b))
+    while i<len(a) and j<len(b):
+        if a[i]>b[j]:
+            full[k] = b[j]
+            j += 1
+        else: 
+            full[k]=a[i]
+            i += 1
+        k+=1
+    if i<len(a):
+        full[k:] = a[i:]
+    elif j<len(b):
+        full[k:] = b[j:]
+    return full
+def mergesort(array):
+    div = len(array)//2
+    left = array[:div]
+    right = array[div:]
+    if (len(left)>1):
+        left = mergesort(left)
+    if (len(right)>1):
+        right = mergesort(right)
+    print(merge(left,right))
+    return merge(left,right)
+print(mergesort(arr))
+
+
+
