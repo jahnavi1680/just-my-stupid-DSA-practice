@@ -40,3 +40,17 @@ def sort(array):
                 array[j],array[j+1]=array[j+1],array[j]
     return array
 print(sort(arr))
+
+print("Try insertion sort")
+arr = [7,467,2,0,4,6]
+def sort(array):
+    for i in range(len(arr)-1):
+        hole = i+1
+        el = array[hole]
+        #shift
+        while hole>0 and array[hole-1]>el:
+            array[hole]=array[hole-1]
+            hole -= 1
+        array[hole]=el
+    return array
+print(sort(arr))
