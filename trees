@@ -1,7 +1,7 @@
 This is a second readme file.
 I am trying to understand Data structures in this one. Since I already understand liner data structures, this is gonna start with Binary trees.
 
-print("Try Binary tree traversals")
+print("Try Binary tree dfs traversals")
 class Node():
     def __init__(self, value):
         self.value = value
@@ -37,3 +37,5 @@ tree.root.right.left = Node(6)
 tree.root.right.right = Node(7)
 tree.root.right.right.right = Node(8)
 print(tree.preorder_traversal(tree.root,""))
+
+
